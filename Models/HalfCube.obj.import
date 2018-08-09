@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/HalfCube.obj-01003c3be2182dbb746886b793268384.mesh"
+
+[deps]
+
+files=[ "res://.import/HalfCube.obj-01003c3be2182dbb746886b793268384.mesh" ]
+
+source_file="res://Models/HalfCube.obj"
+dest_files=[ "res://.import/HalfCube.obj-01003c3be2182dbb746886b793268384.mesh", "res://.import/HalfCube.obj-01003c3be2182dbb746886b793268384.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

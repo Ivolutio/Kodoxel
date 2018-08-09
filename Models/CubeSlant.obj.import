@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/CubeSlant.obj-6ffffb90dd71948bf597b690dcc8f66f.mesh"
+
+[deps]
+
+files=[ "res://.import/CubeSlant.obj-6ffffb90dd71948bf597b690dcc8f66f.mesh" ]
+
+source_file="res://Models/CubeSlant.obj"
+dest_files=[ "res://.import/CubeSlant.obj-6ffffb90dd71948bf597b690dcc8f66f.mesh", "res://.import/CubeSlant.obj-6ffffb90dd71948bf597b690dcc8f66f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
