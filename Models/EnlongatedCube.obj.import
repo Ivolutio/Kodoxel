@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/EnlongatedCube.obj-4e55441247eacac2aa9cf8dfa2e1d7bc.mesh"
+
+[deps]
+
+files=[ "res://.import/EnlongatedCube.obj-4e55441247eacac2aa9cf8dfa2e1d7bc.mesh" ]
+
+source_file="res://Models/EnlongatedCube.obj"
+dest_files=[ "res://.import/EnlongatedCube.obj-4e55441247eacac2aa9cf8dfa2e1d7bc.mesh", "res://.import/EnlongatedCube.obj-4e55441247eacac2aa9cf8dfa2e1d7bc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 5, 5, 5 )
