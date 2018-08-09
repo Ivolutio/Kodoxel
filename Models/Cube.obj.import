@@ -14,4 +14,4 @@ dest_files=[ "res://.import/Cube.obj-90e31c5f5bd84ceffe1581821782c36e.mesh", "re
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 5, 5, 5 )
+scale_mesh=Vector3( 1, 1, 1 )
