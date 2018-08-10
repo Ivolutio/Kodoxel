@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Palettes/BasicShapes.meshlib" type="MeshLibrary" id=1]
-[ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Prefabs/LevelCamera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/LevelCamera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/RotatingBridge.tscn" type="PackedScene" id=4]
 
 [node name="Level1" type="Spatial" index="0"]
 
@@ -18,7 +19,7 @@ cell_scale = 1.0
 collision_layer = 1
 collision_mask = 1
 data = {
-"cells": PoolIntArray( 65538, 0, 3, 65539, 0, 3, 131072, 0, 1310723, 196607, 0, 1310723, 262140, 0, 655360, 262141, 0, 655360, 262142, 0, 536870915, 65538, 1, 393218, 65539, 1, 393218, 1, 2, 538312705, 2, 2, 1441792, 3, 2, 1441792, -65536, 2, 1441792, -4, 2, 0, -3, 2, 0, -2, 2, 0, -1, 2, 0, 1, 3, 1441793, 2, 3, 1441792, 3, 3, 1441792, -65536, 3, 1441792, -4, 3, 0, -3, 3, 536870912, -2, 3, 0, -1, 3, 0, 2, 65532, 655360, 3, 65532, 655360, 65536, 65532, 1048576, 65537, 65532, 537919489, 131071, 65532, 537919488, 196604, 65532, 1048576, 196605, 65532, 1048576, 196606, 65532, 537919489, 2, 65533, 537526272, 3, 65533, 655360, 65536, 65533, 537919488, 65537, 65533, 1048577, 131071, 65533, 1048576, 196604, 65533, 1048576, 196605, 65533, 1048576, 196606, 65533, 1048577, 65538, 65534, 786434, 65539, 65534, 786434, 262140, 65534, 655361, 262141, 65534, 655361, 65538, 65535, 655363, 65539, 65535, 655363, 131072, 65535, 1310723, 196607, 65535, 1310723, 262140, 65535, 655360, 262141, 65535, 655360, 262142, 65535, 3 )
+"cells": PoolIntArray( 65538, 0, 3, 65539, 0, 3, 131072, 0, 1310723, 196607, 0, 1310723, 262140, 0, 655360, 262141, 0, 655360, 262142, 0, 3, 65538, 1, 393218, 65539, 1, 393218, 1, 2, 1441793, 2, 2, 1441792, 3, 2, 1441792, -65536, 2, 1441792, -4, 2, 0, -3, 2, 0, -2, 2, 0, -1, 2, 0, 1, 3, 1441793, 2, 3, 1441792, 3, 3, 1441792, -65536, 3, 1441792, -4, 3, 0, -3, 3, 0, -2, 3, 0, -1, 3, 0, 2, 65532, 655360, 3, 65532, 655360, 65536, 65532, 1048576, 65537, 65532, 1048577, 131071, 65532, 1048576, 196604, 65532, 1048576, 196605, 65532, 1048576, 196606, 65532, 1048577, 2, 65533, 655360, 3, 65533, 655360, 65536, 65533, 1048576, 65537, 65533, 1048577, 131071, 65533, 1048576, 196604, 65533, 1048576, 196605, 65533, 1048576, 196606, 65533, 1048577, 65538, 65534, 786434, 65539, 65534, 786434, 262140, 65534, 655361, 262141, 65534, 655361, 65538, 65535, 655363, 65539, 65535, 655363, 131072, 65535, 1310723, 196607, 65535, 1310723, 262140, 65535, 655360, 262141, 65535, 655360, 262142, 65535, 3 )
 }
 _sections_unfolded = [ "Cell" ]
 __meta__ = {
@@ -26,21 +27,16 @@ __meta__ = {
 "_editor_floor_": Vector3( 0, 2, 0 )
 }
 
-[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 6 )
-CameraPath = NodePath("../LevelCamera")
-
-[node name="LevelCamera" parent="." index="2" instance=ExtResource( 3 )]
+[node name="LevelCamera" parent="." index="1" instance=ExtResource( 2 )]
 
 targetPath = NodePath("../CameraTarget")
 
-[node name="CameraTarget" type="Position3D" parent="." index="3"]
+[node name="CameraTarget" type="Position3D" parent="." index="2"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37057, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="DirectionalLight" type="DirectionalLight" parent="." index="4"]
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="3"]
 
 transform = Transform( 0.621539, -0.512348, 0.592612, 0, 0.756478, 0.65402, -0.783383, -0.406499, 0.470181, 0, -25.9896, 0 )
 layers = 1
@@ -66,5 +62,18 @@ directional_shadow_normal_bias = 0.8
 directional_shadow_bias_split_scale = 0.25
 directional_shadow_depth_range = 0
 directional_shadow_max_distance = 200.0
+
+[node name="Player" parent="." index="4" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, 7 )
+can_sleep = true
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+CameraPath = NodePath("../LevelCamera")
+
+[node name="RotatingBrige" parent="." index="5" instance=ExtResource( 4 )]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -6, -1, 1 )
 
 
