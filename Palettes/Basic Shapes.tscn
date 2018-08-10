@@ -1,13 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Models/Cube.tres" type="ArrayMesh" id=1]
 [ext_resource path="res://Models/CubeSlant.tres" type="ArrayMesh" id=2]
-[ext_resource path="res://Models/BasicMaterial.tres" type="Material" id=3]
-[ext_resource path="res://Models/CubeSteepSlant.tres" type="ArrayMesh" id=4]
-[ext_resource path="res://Models/HalfCube.tres" type="ArrayMesh" id=5]
-[ext_resource path="res://Models/HalfCubeSlant.tres" type="ArrayMesh" id=6]
-[ext_resource path="res://Models/HalfCubeSteepSlant.tres" type="ArrayMesh" id=7]
-[ext_resource path="res://Models/Bridge.tres" type="ArrayMesh" id=8]
+[ext_resource path="res://Models/CubeSteepSlant.tres" type="ArrayMesh" id=3]
+[ext_resource path="res://Models/HalfCube.tres" type="ArrayMesh" id=4]
+[ext_resource path="res://Models/HalfCubeSlant.tres" type="ArrayMesh" id=5]
+[ext_resource path="res://Models/HalfCubeSteepSlant.tres" type="ArrayMesh" id=6]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 
@@ -33,15 +31,11 @@ points = PoolVector3Array( -1, -1, 1, -1, 0, -1, -1, -1, -1, -1, 0, -1, -1, -1, 
 
 points = PoolVector3Array( -1, -1, 0, -1, 0, -1, -1, -1, -1, -1, 0, -1, -1, -1, -1, 1, 0, -1, 1, -1, -1, 1, 0, -1, 1, -1, -1, 1, -1, 0, 1, -1, 0, -1, -1, 0, 1, -1, -1, -1, -1, -1, 1, -1, 0, -1, -1, 0, -1, 0, -1, 1, 0, -1, -1, -1, 0, 1, -1, 0 )
 
-[sub_resource type="ConvexPolygonShape" id=7]
-
-points = PoolVector3Array( -1, 1, -1, -1, 1, 1, -3, 1, -1, -3, 1, 1, -1, 1, -1, -1, 0, -1, 1, 1, -1, 1, 0, -1, 1, 0, 1, 1, 1, 1, 3, -1, 1, 3, 1, 1, 1, 1, 1, 1, 0, 1, -1, 1, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, 3, 1, -1, 3, -1, -1, 3, 1, 1, 3, -1, 1, 1, 0, -1, 1, 0, 1, 3, -1, -1, 3, -1, 1, 3, 1, 1, 3, 1, -1, 1, 1, -1, 1, 0, -1, 3, 1, -1, 3, -1, -1, -3, 1, 1, -3, -1, 1, -3, 1, -1, -3, -1, -1, -1, 0, 1, -1, 0, -1, -3, -1, 1, -3, -1, -1, -1, 0, -1, -1, 1, -1, -3, -1, -1, -3, 1, -1, -1, 1, 1, -1, 0, 1, -3, 1, 1, -3, -1, 1 )
-
-[node name="Default Palette" type="Spatial"]
+[node name="Basic Shapes" type="Spatial"]
 
 [node name="Cube" type="MeshInstance" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.4152 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.870633, -0.620985, -6.51878 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -54,11 +48,9 @@ lod_max_hysteresis = 0.0
 mesh = ExtResource( 1 )
 skeleton = NodePath("..")
 material/0 = null
-_sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody" type="StaticBody" parent="Cube" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.777, -3.87671, -2.09833 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -70,13 +62,12 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Cube/StaticBody" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.777, 3.87671, 2.09833 )
 shape = SubResource( 1 )
 disabled = false
 
 [node name="CubeSlant" type="MeshInstance" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.88048, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00743, -0.536321, 0.628665 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -88,8 +79,7 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = ExtResource( 2 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 3 )
-_sections_unfolded = [ "Geometry", "Transform", "material" ]
+material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="CubeSlant" index="0"]
 
@@ -106,11 +96,10 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 
 shape = SubResource( 2 )
 disabled = false
-_sections_unfolded = [ "Transform" ]
 
 [node name="CubeSteepSlant" type="MeshInstance" parent="." index="2"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47331, 2.94951, -13.246 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.64978, -2.79878, -7.96238 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -120,10 +109,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 4 )
+mesh = ExtResource( 3 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "material" ]
+material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="CubeSteepSlant" index="0"]
 
@@ -143,7 +131,7 @@ disabled = false
 
 [node name="HalfCube" type="MeshInstance" parent="." index="3"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57419, 0, -7.4208 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.848141, -3.97097, -4.68299 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -153,10 +141,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 5 )
+mesh = ExtResource( 4 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "material" ]
+material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="HalfCube" index="0"]
 
@@ -176,7 +163,7 @@ disabled = false
 
 [node name="HalfCubeSlant" type="MeshInstance" parent="." index="4"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.44064, 0, -12.7899 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.234128, -4.57289, -1.27129 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -186,10 +173,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 6 )
+mesh = ExtResource( 5 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "material" ]
+material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="HalfCubeSlant" index="0"]
 
@@ -209,6 +195,7 @@ disabled = false
 
 [node name="HalfCubeSteepSlant" type="MeshInstance" parent="." index="5"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74823, -3.11516, 2.49065 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -218,10 +205,9 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 7 )
+mesh = ExtResource( 6 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "material" ]
+material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="HalfCubeSteepSlant" index="0"]
 
@@ -237,39 +223,6 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="HalfCubeSteepSlant/StaticBody" index="0"]
 
 shape = SubResource( 6 )
-disabled = false
-
-[node name="Bridge" type="MeshInstance" parent="." index="6"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1446, 0, -6.88864 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = ExtResource( 8 )
-skeleton = NodePath("..")
-material/0 = null
-_sections_unfolded = [ "Transform" ]
-
-[node name="StaticBody" type="StaticBody" parent="Bridge" index="0"]
-
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-friction = 1.0
-bounce = 0.0
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Bridge/StaticBody" index="0"]
-
-shape = SubResource( 7 )
 disabled = false
 
 

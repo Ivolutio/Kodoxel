@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Palettes/BasicShapes.meshlib" type="MeshLibrary" id=1]
+[ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefabs/LevelCamera.tscn" type="PackedScene" id=3]
+
+[node name="Level1" type="Spatial" index="0"]
+
+[node name="GridMap" type="GridMap" parent="." index="0"]
+
+theme = ExtResource( 1 )
+cell_size = Vector3( 2, 2, 2 )
+cell_octant_size = 8
+cell_center_x = true
+cell_center_y = true
+cell_center_z = true
+cell_scale = 1.0
+collision_layer = 1
+collision_mask = 1
+data = {
+"cells": PoolIntArray( 65538, 0, 3, 65539, 0, 3, 131072, 0, 1310723, 196607, 0, 1310723, 262140, 0, 655360, 262141, 0, 655360, 262142, 0, 536870915, 65538, 1, 393218, 65539, 1, 393218, 1, 2, 538312705, 2, 2, 1441792, 3, 2, 1441792, -65536, 2, 1441792, -4, 2, 0, -3, 2, 0, -2, 2, 0, -1, 2, 0, 1, 3, 1441793, 2, 3, 1441792, 3, 3, 1441792, -65536, 3, 1441792, -4, 3, 0, -3, 3, 536870912, -2, 3, 0, -1, 3, 0, 2, 65532, 655360, 3, 65532, 655360, 65536, 65532, 1048576, 65537, 65532, 537919489, 131071, 65532, 537919488, 196604, 65532, 1048576, 196605, 65532, 1048576, 196606, 65532, 537919489, 2, 65533, 537526272, 3, 65533, 655360, 65536, 65533, 537919488, 65537, 65533, 1048577, 131071, 65533, 1048576, 196604, 65533, 1048576, 196605, 65533, 1048576, 196606, 65533, 1048577, 65538, 65534, 786434, 65539, 65534, 786434, 262140, 65534, 655361, 262141, 65534, 655361, 65538, 65535, 655363, 65539, 65535, 655363, 131072, 65535, 1310723, 196607, 65535, 1310723, 262140, 65535, 655360, 262141, 65535, 655360, 262142, 65535, 3 )
+}
+_sections_unfolded = [ "Cell" ]
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 2, 0 )
+}
+
+[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 6 )
+CameraPath = NodePath("../LevelCamera")
+
+[node name="LevelCamera" parent="." index="2" instance=ExtResource( 3 )]
+
+targetPath = NodePath("../CameraTarget")
+
+[node name="CameraTarget" type="Position3D" parent="." index="3"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37057, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="4"]
+
+transform = Transform( 0.621539, -0.512348, 0.592612, 0, 0.756478, 0.65402, -0.783383, -0.406499, 0.470181, 0, -25.9896, 0 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.1
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+directional_shadow_mode = 2
+directional_shadow_split_1 = 0.1
+directional_shadow_split_2 = 0.2
+directional_shadow_split_3 = 0.5
+directional_shadow_blend_splits = false
+directional_shadow_normal_bias = 0.8
+directional_shadow_bias_split_scale = 0.25
+directional_shadow_depth_range = 0
+directional_shadow_max_distance = 200.0
+
+
