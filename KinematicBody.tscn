@@ -65,10 +65,10 @@ rings = 8
 
 [sub_resource type="CapsuleShape" id=3]
 
-radius = 1.0
+radius = 0.8
 height = 1.0
 
-[node name="KinematicBody" type="KinematicBody"]
+[node name="KinematicBody" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -87,7 +87,7 @@ CameraPath = null
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 1.5, 0 )
+transform = Transform( 0.8, 0, 0, 0, -3.49691e-008, -1, 0, 0.8, -4.37114e-008, 0, 1.5, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1

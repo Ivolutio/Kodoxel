@@ -1,6 +1,7 @@
 extends Spatial
 
-func _on_Area_body_shape_entered(body_id, body, body_shape, area_shape):
+func _falldeath(body_id, body, body_shape, area_shape):
+	print(body.name)
 	restart()
 
 func _process(delta):
@@ -12,4 +13,5 @@ func quit():
 	get_tree().quit()
 
 func restart():
+	print("restart")
 	get_tree().reload_current_scene()
