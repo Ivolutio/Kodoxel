@@ -14,7 +14,7 @@ extents = Vector3( 34.2594, 1, 26.1812 )
 
 script = ExtResource( 1 )
 
-[node name="GridMap" type="GridMap" parent="." index="0"]
+[node name="StaticWorld" type="GridMap" parent="." index="0"]
 
 theme = ExtResource( 2 )
 cell_size = Vector3( 2, 2, 2 )
@@ -105,7 +105,7 @@ reverb_bus_uniformity = 0.0
 shape = SubResource( 1 )
 disabled = false
 
-[node name="KinematicBody" parent="." index="6" instance=ExtResource( 5 )]
+[node name="Player" parent="." index="6" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 6 )
 _sections_unfolded = [ "collision" ]
