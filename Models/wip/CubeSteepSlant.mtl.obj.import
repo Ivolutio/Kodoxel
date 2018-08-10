@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/CubeSteepSlant.mtl.obj-097b5bed867c1c874cef4eac148fa268.mesh"
+
+[deps]
+
+files=[ "res://.import/CubeSteepSlant.mtl.obj-097b5bed867c1c874cef4eac148fa268.mesh" ]
+
+source_file="res://Models/wip/CubeSteepSlant.mtl.obj"
+dest_files=[ "res://.import/CubeSteepSlant.mtl.obj-097b5bed867c1c874cef4eac148fa268.mesh", "res://.import/CubeSteepSlant.mtl.obj-097b5bed867c1c874cef4eac148fa268.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
