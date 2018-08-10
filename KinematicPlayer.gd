@@ -1,11 +1,11 @@
-extends RigidBody
+extends KinematicBody
 
 export(float) var moveSpeed = 200
 export(NodePath) var CameraPath
 
 var cam
-#const GRAVITY = -9.8 * 3
-#var onGround = false
+const GRAVITY = -9.8 * 3
+var onGround = false
 
 var velocity = Vector3()
 var direction = Vector3()
@@ -29,4 +29,21 @@ func _physics_process(delta):
 	velocity.x = direction.x
 	velocity.z = direction.z
 
-	set_axis_velocity(velocity)
+	if is_on_floor():
+		onGround = true
+	else:
+		if !$RayCast.is_colliding():
+			onGround = false
+	
+	if onGround and !is_on_floor():
+		move_and_collide(Vector3(0, -1, 0))
+	
+	var gravity = GRAVITY
+	if is_on_floor():
+		gravity = 0.1
+	velocity.y += gravity * delta
+	
+	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
+	
+	
+	

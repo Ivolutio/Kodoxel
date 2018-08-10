@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://KinematicPlayer.gd" type="Script" id=1]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -68,35 +68,20 @@ rings = 8
 radius = 1.0
 height = 1.0
 
-[node name="Player" type="RigidBody"]
+[node name="KinematicBody" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 3.0
-custom_integrator = false
-continuous_cd = false
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = false
 axis_lock_linear_x = false
 axis_lock_linear_y = false
 axis_lock_linear_z = false
-axis_lock_angular_x = true
+axis_lock_angular_x = false
 axis_lock_angular_y = false
-axis_lock_angular_z = true
-linear_velocity = Vector3( 0, 0, 0 )
-linear_damp = -1.0
-angular_velocity = Vector3( 0, 0, 0 )
-angular_damp = 1.0
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
 script = ExtResource( 1 )
-_sections_unfolded = [ "Angular", "Axis Lock", "Linear", "Transform" ]
 moveSpeed = 200
 CameraPath = null
 
@@ -123,5 +108,12 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 1.
 shape = SubResource( 3 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
+
+[node name="RayCast" type="RayCast" parent="." index="2"]
+
+enabled = false
+exclude_parent = true
+cast_to = Vector3( 0, -1, 0 )
+collision_mask = 1
 
 
