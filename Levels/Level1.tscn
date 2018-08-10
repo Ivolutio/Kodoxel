@@ -86,8 +86,9 @@ CameraPath = NodePath("../LevelCamera")
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 6 )
 CameraPath = NodePath("../LevelCamera")
 
-[node name="Area" type="Area" parent="." index="7"]
+[node name="FallDeath" type="Area" parent="." index="7"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18, 0 )
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -110,17 +111,17 @@ reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
 
-[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="FallDeath" index="0"]
 
 shape = SubResource( 1 )
 disabled = false
 
-[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
+[connection signal="area_entered" from="FallDeath" to="." method="_on_Area_area_entered"]
 
-[connection signal="area_shape_entered" from="Area" to="." method="_on_falldeath_area_entered"]
+[connection signal="area_shape_entered" from="FallDeath" to="." method="_on_falldeath_area_entered"]
 
-[connection signal="body_entered" from="Area" to="." method="_on_falldeath_area_entered"]
+[connection signal="body_entered" from="FallDeath" to="." method="_on_falldeath_area_entered"]
 
-[connection signal="body_shape_entered" from="Area" to="." method="_on_Area_body_shape_entered"]
+[connection signal="body_shape_entered" from="FallDeath" to="." method="_on_Area_body_shape_entered"]
 
 
