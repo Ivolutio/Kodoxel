@@ -16,14 +16,14 @@ func _physics_process(delta):
 
 ### Shooting Bubbles
 onready var BUBBLE = preload("res://Prefabs/Bubble.tscn")
-export(Vector3) var ShootOffset = Vector3(.5, 1.7, 0)
+export(Vector3) var ShootOffset = Vector2(.5, 1.7)
 export(float) var ShootCooldown = 1
 export(Vector2) var ShootForce = Vector2(.05, .12)
 var shootCooldown = 0
 
 func shoot_bubble():
 	var newBubble = BUBBLE.instance()
-	newBubble.transform.origin = get_global_transform().origin + ShootOffset
+	newBubble.transform.origin = get_global_transform().origin + Vector3(0, ShootOffset.y, 0) + (get_global_transform().basis.z * ShootOffset.x)
 	newBubble.apply_impulse(newBubble.transform.origin, get_global_transform().basis.z * rand_range(ShootForce.x, ShootForce.y))
 	get_parent().add_child(newBubble)
 
@@ -76,6 +76,9 @@ func movement(delta):
 		move_and_collide(Vector3(0, -1, 0))
 	
 	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
+	
+	if direction.normalized() != Vector3(0, 0, 0):
+		look_at(direction.normalized() * -50, Vector3(0,1,0))
 	
 	
 	

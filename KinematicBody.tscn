@@ -76,7 +76,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[node name="KinematicBody" type="KinematicBody" index="0"]
+[node name="KinematicBody" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -91,7 +91,7 @@ axis_lock_angular_z = false
 collision/safe_margin = 0.001
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
-ShootOffset = Vector3( 0.5, 1.7, 0 )
+ShootOffset = Vector2( 0.5, 1.7 )
 ShootCooldown = 1
 ShootForce = Vector2( 0.05, 0.12 )
 moveSpeed = 200
