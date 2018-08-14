@@ -28,8 +28,9 @@ func shoot_bubble():
 	get_parent().add_child(newBubble)
 
 ### Movement
-export(float) var moveSpeed = 200
 export(NodePath) var CameraPath
+export(float) var moveSpeed = 200
+export(float) var rotateSpeed = 4
 
 var cam
 const GRAVITY = -9.8 * 3
@@ -77,8 +78,13 @@ func movement(delta):
 	
 	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
 	
-	if direction.normalized() != Vector3(0, 0, 0):
-		look_at(direction.normalized() * -50, Vector3(0, 1, 0))
+	#only if moving
+	if velocity.x != 0 or velocity.z != 0:
+		var angle = atan2(velocity.x, velocity.z)
+		var curr_rot = get_rotation()
+		var target_rot = Vector3(curr_rot.x, angle, curr_rot.z)
+		var new_rot = Quat(Basis(curr_rot)).slerp(Quat(Basis(target_rot)), rotateSpeed * delta)
+		set_rotation(Basis(new_rot).get_euler())
 
 
 func _on_PickupArea_body_shape_entered(body_id, body, body_shape, area_shape):

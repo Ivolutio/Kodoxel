@@ -99,8 +99,9 @@ _sections_unfolded = [ "Collision" ]
 ShootOffset = Vector2( 0.5, 1.7 )
 ShootCooldown = 1
 ShootForce = Vector2( 0.05, 0.12 )
-moveSpeed = 200
 CameraPath = null
+moveSpeed = 200
+rotateSpeed = 4
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 

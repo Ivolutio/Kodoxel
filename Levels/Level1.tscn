@@ -22,7 +22,7 @@ use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Level1" type="Spatial"]
+[node name="Level1" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
@@ -123,6 +123,7 @@ transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -6, 0
 _sections_unfolded = [ "Collision", "collision" ]
 ShootCooldown = 0.5
 CameraPath = NodePath("../LevelCamera")
+rotateSpeed = 10.0
 
 [node name="UIOverlay" type="Control" parent="." index="7"]
 
