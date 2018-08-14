@@ -84,4 +84,4 @@ func movement(delta):
 func _on_PickupArea_body_shape_entered(body_id, body, body_shape, area_shape):
 	body.get_parent().queue_free()
 	var level = get_node("/root/").get_child(0)
-	#level.CoinCounter.modify(1) 
+	level.CoinCounter.modify(1) 
