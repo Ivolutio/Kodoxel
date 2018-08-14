@@ -2,13 +2,13 @@
 
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=1]
 [ext_resource path="res://Palettes/BasicShapes.meshlib" type="MeshLibrary" id=2]
-[ext_resource path="res://Prefabs/LevelCamera.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Prefabs/RotatingBridge.tscn" type="PackedScene" id=4]
-[ext_resource path="res://KinematicBody.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Levels/CoinCounter.gd" type="Script" id=6]
-[ext_resource path="res://Ubuntu-Title.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://icon.png" type="Texture" id=8]
-[ext_resource path="res://Prefabs/Coin.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Prefabs/Coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/LevelCamera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/RotatingBridge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://KinematicBody.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/CoinCounter.gd" type="Script" id=7]
+[ext_resource path="res://Ubuntu-Title.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://icon.png" type="Texture" id=9]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -19,10 +19,10 @@ extents = Vector3( 34.2594, 1, 26.1812 )
 size = 48
 use_mipmaps = true
 use_filter = false
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Level1" type="Spatial" index="0"]
+[node name="Level1" type="Spatial"]
 
 script = ExtResource( 1 )
 
@@ -46,16 +46,56 @@ __meta__ = {
 "_editor_floor_": Vector3( 0, 3, 0 )
 }
 
-[node name="LevelCamera" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Collectables" type="Spatial" parent="." index="1"]
+
+editor/display_folded = true
+
+[node name="Coin" parent="Collectables" index="0" instance=ExtResource( 3 )]
+
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1, 2, 6 )
+
+[node name="Coin4" parent="Collectables" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 6, 4, 6 )
+
+[node name="Coin5" parent="Collectables" index="2" instance=ExtResource( 3 )]
+
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 6, 5, 0 )
+
+[node name="Coin6" parent="Collectables" index="3" instance=ExtResource( 3 )]
+
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 6, 4, -6 )
+
+[node name="Coin7" parent="Collectables" index="4" instance=ExtResource( 3 )]
+
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 6, -6 )
+
+[node name="Coin8" parent="Collectables" index="5" instance=ExtResource( 3 )]
+
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -6, 8, -6 )
+
+[node name="Coin9" parent="Collectables" index="6" instance=ExtResource( 3 )]
+
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -6, 10, 0 )
+
+[node name="Coin3" parent="Collectables" index="7" instance=ExtResource( 3 )]
+
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -3, 2, 6 )
+
+[node name="Coin2" parent="Collectables" index="8" instance=ExtResource( 3 )]
+
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1, 2, 6 )
+
+[node name="LevelCamera" parent="." index="2" instance=ExtResource( 4 )]
 
 targetPath = NodePath("../CameraTarget")
 
-[node name="CameraTarget" type="Position3D" parent="." index="2"]
+[node name="CameraTarget" type="Position3D" parent="." index="3"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37057, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="DirectionalLight" type="DirectionalLight" parent="." index="3"]
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="4"]
 
 transform = Transform( 0.621539, -0.512348, 0.592612, 0, 0.756478, 0.65402, -0.783383, -0.406499, 0.470181, 0, 41.0104, 0 )
 layers = 1
@@ -82,11 +122,11 @@ directional_shadow_bias_split_scale = 0.25
 directional_shadow_depth_range = 0
 directional_shadow_max_distance = 200.0
 
-[node name="RotatingBrige" parent="." index="4" instance=ExtResource( 4 )]
+[node name="RotatingBrige" parent="." index="5" instance=ExtResource( 5 )]
 
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -6, -1, 1 )
 
-[node name="FallDeath" type="Area" parent="." index="5"]
+[node name="FallDeath" type="Area" parent="." index="6"]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18, 0 )
@@ -117,7 +157,7 @@ reverb_bus_uniformity = 0.0
 shape = SubResource( 1 )
 disabled = false
 
-[node name="Player" parent="." index="6" instance=ExtResource( 5 )]
+[node name="Player" parent="." index="7" instance=ExtResource( 6 )]
 
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -6, 0, 6 )
 _sections_unfolded = [ "Collision", "collision" ]
@@ -125,7 +165,7 @@ ShootCooldown = 0.5
 CameraPath = NodePath("../LevelCamera")
 rotateSpeed = 10.0
 
-[node name="UIOverlay" type="Control" parent="." index="7"]
+[node name="UIOverlay" type="Control" parent="." index="8"]
 
 anchor_left = 1.0
 anchor_top = 0.0
@@ -155,7 +195,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="UIOverlay/CoinCounter" index="0"]
 
@@ -196,14 +236,8 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 stretch_mode = 0
-
-[node name="Spatial" type="Spatial" parent="." index="8"]
-
-[node name="Coin" parent="Spatial" index="0" instance=ExtResource( 9 )]
-
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1, 1, 6 )
 
 [connection signal="body_shape_entered" from="FallDeath" to="." method="_falldeath"]
 
