@@ -78,7 +78,10 @@ func movement(delta):
 	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
 	
 	if direction.normalized() != Vector3(0, 0, 0):
-		look_at(direction.normalized() * -50, Vector3(0,1,0))
-	
-	
-	
+		look_at(direction.normalized() * -50, Vector3(0, 1, 0))
+
+
+func _on_PickupArea_body_shape_entered(body_id, body, body_shape, area_shape):
+	body.get_parent().queue_free()
+	var level = get_node("/root/").get_child(0)
+	#level.CoinCounter.modify(1) 
