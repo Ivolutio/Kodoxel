@@ -50,20 +50,20 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 3.2, 6.4, 10 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 2.5, 5, 7.5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -1.5, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 1.5, 0 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -1.5, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 1.5, 0 ), Vector3( 0, 0, 0 ) ]
 }
 
-[node name="Coin" type="Spatial" index="0"]
+[node name="Coin" type="Spatial"]
 
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
+transform = Transform( -0.3, 2.62268e-008, 0, -2.62268e-008, -0.3, 0, 0, 0, 0.3, 0, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
-transform = Transform( 0.309017, 0, -0.951056, 0, 1, 0, 0.951056, 0, 0.309017, 0, 0, 0 )
+transform = Transform( 1, 0, 1.74846e-007, 0, 1, 0, -1.74846e-007, 0, 1, 0, 0, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
